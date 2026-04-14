@@ -418,5 +418,11 @@ body {
 .floating-gallery img:nth-child(4),
 .floating-gallery img:nth-child(13) {
 
+  .floating-gallery img[src="images/mestre-comp1.jpg"] {
+  object-position: top !important;
+
+      .floating-gallery img[src="images/mestre-comp2.jpg"] {
+  object-position: top !important;
+
   object-position: center 300% !important; 
 }
