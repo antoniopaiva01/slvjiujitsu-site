@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Início | SLV Jiu-Jitsu MMA</title>
+  <meta property="og:title" content="SLV Jiu-Jitsu MMA | Treine com Campeões">
+  <meta property="og:description" content="Transforme sua vida através das artes marciais. Jiu-Jitsu, Muay Thai e MMA em Campinas. Agende sua aula experimental grátis!">
+  <meta property="og:image" content="images/mestre.jpg">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#00ff88">
+  <link rel="icon" type="image/favicon.jpg" href="images/favicon.jpg">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="preloader" id="preloader"><div class="logo-pulse">SLV <span>JIU JITSU MMA</span></div></div>
+ 
+  <header class="nav">
+    <div class="logo">SLV <span>JIU JITSU MMA</span></div>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+    <nav id="nav-links">
+      <a href="index.html">Início</a>
+      <a href="equipe.html">A Equipe</a>
+      <a href="contato.html">Localização & Contato</a>
+    </nav>
+  </header>
+
+ <section class="hero" id="home">
+    <div class="hero-content reveal">
+      
+      <img src="images/favicon.jpg" alt="Logo SLV" class="hero-logo-main">
+
+      <h1>DISCIPLINA.<br><span>FORÇA.</span> RESPEITO.</h1>
+      <p>Equipe liderada pelo campeão mundial Saul Vieira.</p>
+      <button onclick="window.location.href='contato.html'" class="btn-glow">Aula experimental grátis</button>
+      <br>
+      <div class="fide-badge">
+        <img src="images/fide.png" alt="Logo FIDE BJJ">
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee-container">
+    <div class="marquee-content">
+      <span>🥋 PRIMEIRA AULA GRÁTIS • SLV JIU JITSU MMA • TREINE COM CAMPEÕES 🥋</span>
+      <span>🥋 PRIMEIRA AULA GRÁTIS • SLV JIU JITSU MMA • TREINE COM CAMPEÕES 🥋</span>
+      <span>🥋 PRIMEIRA AULA GRÁTIS • SLV JIU JITSU MMA • TREINE COM CAMPEÕES 🥋</span>
+    </div>
+  </div>
+
+  <section class="modalidades" id="modalidades">
+    <h2 class="reveal">Nossas Modalidades</h2>
+    <p class="subtitle reveal">Escolha sua arte marcial e comece a treinar hoje mesmo.</p>
+    <div class="tabs-container reveal delay-1">
+      <div class="tab-buttons">
+        <button class="tab-btn active" onclick="openTab(event, 'jj')">Jiu-Jitsu</button>
+        <button class="tab-btn" onclick="openTab(event, 'mt')">Muay Thai</button>
+        <button class="tab-btn" onclick="openTab(event, 'mma')">MMA</button>
+      </div>
+      <div class="tab-content active" id="jj">
+        <div class="tab-text">
+          <h3>Jiu-Jitsu Brasileiro (BJJ)</h3>
+          <p>Conhecida como a "arte suave", o Jiu-Jitsu foca em alavancas e estrangulamentos. Ideal para defesa pessoal e condicionamento.</p>
+        </div>
+        <div class="tab-img"><img src="images/jiujitsu.jpg" alt="Jiu-Jitsu"></div>
+      </div>
+      <div class="tab-content" id="mt">
+        <div class="tab-text">
+          <h3>Muay Thai</h3>
+          <p>A "arte das oito armas". Foco em trocação poderosa. Excelente para queima de calorias e agilidade.</p>
+        </div>
+        <div class="tab-img"><img src="images/muaythai.jpg" alt="Muay Thai"></div>
+      </div>
+      <div class="tab-content" id="mma">
+        <div class="tab-text">
+          <h3>Artes Marciais Mistas (MMA)</h3>
+          <p>A combinação perfeita de quedas, trocação e luta de solo. Treinamento de alta intensidade para quem quer ir além.</p>
+        </div>
+        <div class="tab-img"><img src="images/mma.jpg" alt="MMA"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="logo">SLV <span>JIU JITSU MMA</span></div>
+      <p>Disciplina. Força. Respeito.</p>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2026 SLV Academia. Todos os direitos reservados.</p></div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

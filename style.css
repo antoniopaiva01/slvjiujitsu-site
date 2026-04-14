@@ -1,0 +1,438 @@
+/* RESET GERAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #050505;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+:root {
+  --green: #00ff88;
+  --dark-gray: #111111;
+}
+
+/* NAVBAR */
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%;
+  background: rgba(5, 5, 5, 0.7);
+  backdrop-filter: blur(15px);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo { font-size: 24px; font-weight: 900; letter-spacing: -1px; }
+.logo span { font-size: 12px; font-weight: 400; color: var(--green); letter-spacing: 2px; margin-left: 5px; }
+
+nav { display: flex; }
+nav a { color: #ccc; text-decoration: none; margin-left: 30px; font-size: 14px; font-weight: 500; transition: color 0.3s; cursor: pointer; }
+nav a:hover { color: var(--green); }
+
+/* MENU HAMBÚRGUER (Invisível no PC) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  z-index: 1001;
+}
+.hamburger span { width: 30px; height: 3px; background: #fff; border-radius: 3px; transition: 0.4s; }
+
+/* HERO SECTION (Com o fundo "Fade" perfeito) */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 20px 40px 20px;
+  /* O SEGREDO DO FADE CORRIGIDO (Centro mais transparente) */
+  background: 
+    radial-gradient(circle at center, rgba(5, 5, 5, 0.2) 0%, rgba(5, 5, 5, 0.95) 55%, #050505 100%),
+    url('images/favicon.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 55%;
+}
+.hero h1 { font-size: clamp(40px, 8vw, 80px); font-weight: 900; line-height: 1.1; letter-spacing: -2px; margin-bottom: 20px; }
+.hero h1 span { color: var(--green); }
+.hero p { font-size: 18px; color: #888; margin-bottom: 40px; font-weight: 300; }
+
+/* BOTÕES */
+.btn-glow, .btn-whats {
+  background: var(--green); color: #000; border: none; padding: 18px 40px; font-size: 16px; font-weight: 700; border-radius: 50px; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.4s ease; box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
+}
+.btn-glow:hover, .btn-whats:hover { transform: translateY(-5px); box-shadow: 0 10px 40px rgba(0, 255, 136, 0.5); background: #00e67a; }
+
+/* SOBRE */
+.sobre { padding: 150px 5%; display: flex; align-items: center; justify-content: space-between; gap: 50px; max-width: 1200px; margin: 0 auto; }
+.sobre-text { flex: 1; }
+.sobre-text h2 { font-size: 40px; margin-bottom: 20px; color: var(--green); }
+.sobre-text p { font-size: 18px; color: #aaa; line-height: 1.6; margin-bottom: 15px; }
+.sobre-img { flex: 1; }
+.sobre-img img { width: 100%; border-radius: 20px; filter: grayscale(100%); transition: 0.5s; }
+.sobre-img img:hover { filter: grayscale(0%); box-shadow: 0 20px 60px rgba(0, 255, 136, 0.15); }
+
+/* --- SEÇÃO: MODALIDADES (ABAS) --- */
+.modalidades { padding: 100px 5%; background: #0a0a0a; text-align: center; }
+.modalidades h2 { font-size: 40px; margin-bottom: 10px; }
+.modalidades .subtitle { color: #888; margin-bottom: 50px; }
+
+.tabs-container { max-width: 1000px; margin: 0 auto; background: var(--dark-gray); border-radius: 20px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.05); text-align: left; }
+.tab-buttons { display: flex; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+.tab-btn { flex: 1; background: transparent; color: #888; border: none; padding: 20px; font-size: 18px; font-weight: 700; cursor: pointer; transition: 0.3s; }
+.tab-btn:hover { color: #fff; background: rgba(255, 255, 255, 0.02); }
+.tab-btn.active { color: #000; background: var(--green); }
+
+.tab-content { display: none; padding: 50px; gap: 40px; align-items: center; }
+.tab-content.active { display: flex; animation: fadeEffect 0.6s; }
+@keyframes fadeEffect { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+.tab-text { flex: 1; }
+.tab-text h3 { font-size: 32px; color: #fff; margin-bottom: 15px; }
+.tab-text p { color: #aaa; line-height: 1.6; font-size: 18px; }
+.tab-img { flex: 1; }
+.tab-img img { width: 100%; height: 300px; object-fit: cover; border-radius: 15px; border: 2px solid rgba(0, 255, 136, 0.2); }
+
+/* Ajuste de foco para a foto do Muay Thai */
+#mt .tab-img img { object-position: top; }
+
+/* CAMPEÕES */
+.champions { padding: 100px 5%; text-align: center; background: #050505; }
+.champions h2 { font-size: 40px; margin-bottom: 60px; color: #fff; }
+.floating-gallery { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; }
+.floating-gallery img { width: 280px; height: 380px; object-fit: cover; border-radius: 15px; filter: grayscale(100%) brightness(0.9); border: 2px solid rgba(255, 255, 255, 0.1); transition: all 0.4s ease; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); }
+.floating-gallery img:hover { filter: grayscale(0%) brightness(1); border-color: var(--green); transform: translateY(-10px) scale(1.02); box-shadow: 0 20px 40px rgba(0, 255, 136, 0.3); z-index: 10; }
+.floating-gallery img:nth-child(even) { transform: translateY(-40px); }
+
+/* --- NOVA SEÇÃO: HORÁRIOS --- */
+.horarios {
+  padding: 100px 5%;
+  background: var(--dark-gray);
+  text-align: center;
+}
+.horarios h2 { font-size: 40px; margin-bottom: 10px; color: #fff; }
+.horarios .subtitle { color: #888; margin-bottom: 50px; font-size: 18px; }
+
+.horarios-img {
+  max-width: 1000px;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  border: 1px solid rgba(255,255,255,0.05);
+}
+.horarios-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --- NOVA SEÇÃO: FAQ (DÚVIDAS FREQUENTES) --- */
+.faq {
+  padding: 100px 5%;
+  background: #050505;
+  text-align: center;
+}
+.faq h2 { font-size: 40px; margin-bottom: 10px; color: #fff; }
+.faq .subtitle { color: #888; margin-bottom: 50px; font-size: 18px; }
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.faq-item {
+  background: #0a0a0a;
+  border: 1px solid rgba(255,255,255,0.05);
+  margin-bottom: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  background: transparent;
+  color: #fff;
+  border: none;
+  padding: 25px;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.3s;
+}
+.faq-question:hover { color: var(--green); }
+.faq-question .icon { font-size: 24px; color: var(--green); transition: transform 0.3s; }
+
+.faq-question.active .icon { transform: rotate(45deg); color: #fff; }
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
+  background: #111;
+}
+.faq-answer p {
+  padding: 0 25px 25px 25px;
+  color: #aaa;
+  line-height: 1.6;
+}
+
+/* CTA / CONTATO & ENDEREÇO */
+.cta { padding: 150px 20px; text-align: center; max-width: 800px; margin: 0 auto; }
+.cta h2 { font-size: 48px; margin-bottom: 20px; }
+.cta p { color: #888; font-size: 20px; margin-bottom: 30px; }
+.endereco { display: inline-block; background: rgba(255, 255, 255, 0.05); padding: 15px 30px; border-radius: 50px; border: 1px solid rgba(0, 255, 136, 0.2); color: #fff; font-size: 16px; font-weight: 500; margin-bottom: 40px; }
+
+/* RODAPÉ */
+footer { background: var(--dark-gray); padding: 60px 5% 20px 5%; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
+.footer-content { margin-bottom: 40px; }
+.footer-content .logo { margin-bottom: 10px; }
+.footer-content p { color: #888; }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px; color: #555; font-size: 14px; }
+
+/* ANIMAÇÕES (Scroll Reveal) */
+.reveal { opacity: 0; transform: translateY(50px); transition: all 0.8s ease-out; }
+.reveal.active { opacity: 1; transform: translateY(0); }
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+
+/* ========================================= */
+/* EFEITOS PREMIUM (PRELOADER, MAPA E WHATS) */
+/* ========================================= */
+
+/* 1. PRELOADER FUTURISTA */
+.preloader {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: #050505;
+  display: flex; justify-content: center; align-items: center;
+  z-index: 9999;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+.preloader.hide { opacity: 0; visibility: hidden; }
+
+.logo-pulse { font-size: 32px; font-weight: 900; letter-spacing: -1px; animation: pulse 1.5s infinite alternate; }
+.logo-pulse span { font-size: 16px; font-weight: 400; color: var(--green); letter-spacing: 2px; margin-left: 5px; }
+
+@keyframes pulse { 
+  0% { transform: scale(0.9); text-shadow: 0 0 10px rgba(0,255,136,0.2); } 
+  100% { transform: scale(1.1); text-shadow: 0 0 30px rgba(0,255,136,0.8); } 
+}
+
+/* 2. O TRUQUE DO MAPA DARK MODE */
+.map-container { 
+  margin-top: 60px; border-radius: 20px; overflow: hidden; 
+  border: 1px solid rgba(255,255,255,0.05); 
+}
+.map-container iframe {
+  width: 100%; display: block;
+  /* Isso inverte as cores do Google Maps para ficar escuro e neon */
+  filter: invert(90%) hue-rotate(180deg) grayscale(30%) contrast(110%);
+}
+
+/* 3. BOTÃO WHATSAPP FLUTUANTE COM "PING" */
+.whats-float {
+  position: fixed; bottom: 30px; right: 30px;
+  background-color: var(--green); color: #000;
+  border-radius: 50%; width: 60px; height: 60px;
+  display: flex; justify-content: center; align-items: center;
+  z-index: 1000; box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: 0.3s;
+}
+.whats-float:hover { transform: scale(1.1); }
+
+/* A onda do Ping */
+.whats-float::before {
+  content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background-color: var(--green); border-radius: 50%; z-index: -1;
+  animation: ping 2s infinite;
+}
+@keyframes ping {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+/* ========================================= */
+/* EFEITOS EXPERT (LANTERNA, TILT E LETREIRO)*/
+/* ========================================= */
+
+/* 1. CURSOR LANTERNA (Luz neon seguindo o mouse) */
+.cursor-glow {
+  position: fixed;
+  top: 0; left: 0;
+  width: 500px; height: 500px;
+  /* Cria uma bola de luz verde esfumaçada */
+  background: radial-gradient(circle, rgba(0, 255, 136, 0.08) 0%, rgba(0, 0, 0, 0) 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%); /* Centraliza a luz na ponta do mouse */
+  pointer-events: none; /* Garante que a luz não bloqueie os cliques nos botões */
+  z-index: 999;
+  mix-blend-mode: screen; /* Faz a luz se misturar de forma bonita com o fundo preto */
+}
+
+/* 2. LETREIRO ROLANTE INFINITO */
+.marquee-container {
+  width: 100%;
+  background: var(--green); /* Faixa verde neon */
+  color: #000;
+  padding: 15px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
+}
+/* ========================================= */
+/* POLIMENTO FINAL: SCROLLBAR E FADE DE TELA */
+/* ========================================= */
+
+/* 1. Animação suave ao trocar de página (Fade-in) */
+body {
+  animation: fadeInPage 0.6s ease-out;
+}
+
+@keyframes fadeInPage {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* 2. Barra de Rolagem Personalizada (Dark e Verde Neon) */
+::-webkit-scrollbar {
+  width: 12px; /* Largura da barra */
+}
+
+::-webkit-scrollbar-track {
+  background: #050505; /* Fundo super escuro igual o site */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #222; /* Cor neutra inicial */
+  border-radius: 10px;
+  border: 2px solid #050505; /* Espaçamento interno */
+  transition: 0.3s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--green); /* Fica verde neon quando o cliente puxa a barra! */
+}
+.marquee-content {
+  display: inline-block;
+  /* Animação que empurra o texto para o lado sem parar */
+  animation: scrollMarquee 25s linear infinite; 
+  font-weight: 900;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+.marquee-content span {
+  margin-right: 40px; /* Espaço entre as frases */
+}
+
+@keyframes scrollMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } 
+}
+
+/* Ajuste vital para o Efeito 3D (Tilt) funcionar na galeria */
+.floating-gallery {
+  perspective: 1000px; /* Cria a profundidade 3D na tela */
+}
+/* RESPONSIVO MOBILE COMPLETÃO */
+@media (max-width: 768px) {
+  /* Hambúrguer e Menu Mobile */
+  .hamburger { display: flex; }
+  nav { position: fixed; top: 0; right: -100%; width: 250px; height: 100vh; background: #080808; flex-direction: column; justify-content: center; align-items: center; transition: 0.4s ease-in-out; border-left: 2px solid var(--green); }
+  nav.active { right: 0; }
+  nav a { margin: 25px 0; font-size: 18px; }
+  
+  /* Animação do X do Hambúrguer */
+  .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(8px, 6px); }
+  .hamburger.active span:nth-child(2) { opacity: 0; }
+  .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -5px); }
+
+  /* Ajustes Gerais Mobile */
+  .sobre { flex-direction: column; text-align: center; padding: 100px 5%; }
+  .tab-buttons { flex-direction: column; }
+  .tab-content.active { flex-direction: column; text-align: center; padding: 30px; }
+  .floating-gallery img { width: 100%; max-width: 350px; height: 450px; margin-bottom: 20px; }
+  .floating-gallery img:nth-child(even) { transform: translateY(0); }
+  .endereco { font-size: 14px; padding: 15px; }
+  .faq-question { font-size: 16px; padding: 20px; }
+}
+/* --- ENXERTOS NOVOS: FIDE E LAYOUT DE FOTOS --- */
+
+/* ========================================= */
+/* SELO DA FIDE (Apenas o ícone menor)       */
+/* ========================================= */
+
+.fide-badge { 
+  margin-top: 30px; /* Distância do botão */
+  display: inline-flex; 
+  justify-content: center;
+}
+
+/* O fundo do texto antigo sumiu, sobrou só a imagem! */
+.fide-badge img { 
+  display: block; 
+  height: 28px; /* Menorzinho como ele pediu */
+  width: 28px; 
+  object-fit: contain; 
+  background-color: #ffffff; /* O fundo branco pra logo aparecer */
+  padding: 3px; 
+  border-radius: 50%; 
+  opacity: 0.7; /* Deixa a logo levemente transparente pra não roubar a cena */
+  transition: 0.3s ease;
+}
+
+.fide-badge img:hover {
+  opacity: 1; /* Fica 100% visível quando passa o mouse */
+  transform: scale(1.1);
+}
+/* Grid Novo do Mestre (1 foto grande, 2 pequenas embaixo) */
+.sobre-img-grid { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+.sobre-img-grid img { width: 100%; object-fit: cover; border-radius: 15px; filter: grayscale(100%); transition: 0.5s; border: 1px solid rgba(255,255,255,0.1); }
+.sobre-img-grid img:hover { filter: grayscale(0%); box-shadow: 0 10px 30px rgba(0, 255, 136, 0.2); border-color: var(--green); }
+.sobre-img-grid .main-img { grid-column: span 2; height: 350px; }
+.sobre-img-grid .sub-img { height: 200px; }
+
+/* Ajuste brutal para caber as 16 fotos sem quebrar o site */
+.floating-gallery { display: grid !important; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+.floating-gallery img { width: 100% !important; height: 280px !important; margin: 0 !important; transform: none !important; }
+
+/* Ajuste para o celular não bugar as fotos novas */
+@media (max-width: 768px) {
+  .sobre-img-grid { grid-template-columns: 1fr; }
+  .sobre-img-grid .main-img { grid-column: span 1; height: 250px; }
+}
+.hero-logo-main {
+  width: 180px; /* Tamanho ideal para destaque */
+  margin-bottom: 25px; /* Espaço entre a logo e o texto */
+  filter: drop-shadow(0px 10px 20px rgba(0, 255, 136, 0.3)); /* Um brilho verde de leve nela */
+}
+/* ========================================= */
+/* AJUSTE DE ENQUADRAMENTO (Subindo ao máximo) */
+/* ========================================= */
+
+.floating-gallery img:nth-child(4),
+.floating-gallery img:nth-child(13) {
+  /* 100% é o limite máximo para subir a imagem */
+  object-position: center 300% !important; 
+}
