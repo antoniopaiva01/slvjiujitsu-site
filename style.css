@@ -106,7 +106,7 @@ nav a:hover { color: var(--green); }
 .tab-img { flex: 1; }
 .tab-img img { width: 100%; height: 300px; object-fit: cover; border-radius: 15px; border: 2px solid rgba(0, 255, 136, 0.2); }
 
-/* Ajuste de foco para a foto do Muay Thai */
+
 #mt .tab-img img { object-position: top; }
 
 /* CAMPEÕES */
@@ -195,20 +195,20 @@ nav a:hover { color: var(--green); }
   line-height: 1.6;
 }
 
-/* CTA / CONTATO & ENDEREÇO */
+
 .cta { padding: 150px 20px; text-align: center; max-width: 800px; margin: 0 auto; }
 .cta h2 { font-size: 48px; margin-bottom: 20px; }
 .cta p { color: #888; font-size: 20px; margin-bottom: 30px; }
 .endereco { display: inline-block; background: rgba(255, 255, 255, 0.05); padding: 15px 30px; border-radius: 50px; border: 1px solid rgba(0, 255, 136, 0.2); color: #fff; font-size: 16px; font-weight: 500; margin-bottom: 40px; }
 
-/* RODAPÉ */
+
 footer { background: var(--dark-gray); padding: 60px 5% 20px 5%; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
 .footer-content { margin-bottom: 40px; }
 .footer-content .logo { margin-bottom: 10px; }
 .footer-content p { color: #888; }
 .footer-bottom { border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px; color: #555; font-size: 14px; }
 
-/* ANIMAÇÕES (Scroll Reveal) */
+
 .reveal { opacity: 0; transform: translateY(50px); transition: all 0.8s ease-out; }
 .reveal.active { opacity: 1; transform: translateY(0); }
 .delay-1 { transition-delay: 0.1s; }
@@ -216,11 +216,7 @@ footer { background: var(--dark-gray); padding: 60px 5% 20px 5%; text-align: cen
 .delay-3 { transition-delay: 0.3s; }
 .delay-4 { transition-delay: 0.4s; }
 
-/* ========================================= */
-/* EFEITOS PREMIUM (PRELOADER, MAPA E WHATS) */
-/* ========================================= */
 
-/* 1. PRELOADER FUTURISTA */
 .preloader {
   position: fixed; top: 0; left: 0; width: 100%; height: 100%;
   background: #050505;
@@ -238,18 +234,18 @@ footer { background: var(--dark-gray); padding: 60px 5% 20px 5%; text-align: cen
   100% { transform: scale(1.1); text-shadow: 0 0 30px rgba(0,255,136,0.8); } 
 }
 
-/* 2. O TRUQUE DO MAPA DARK MODE */
+
 .map-container { 
   margin-top: 60px; border-radius: 20px; overflow: hidden; 
   border: 1px solid rgba(255,255,255,0.05); 
 }
 .map-container iframe {
   width: 100%; display: block;
-  /* Isso inverte as cores do Google Maps para ficar escuro e neon */
+ 
   filter: invert(90%) hue-rotate(180deg) grayscale(30%) contrast(110%);
 }
 
-/* 3. BOTÃO WHATSAPP FLUTUANTE COM "PING" */
+
 .whats-float {
   position: fixed; bottom: 30px; right: 30px;
   background-color: var(--green); color: #000;
@@ -260,7 +256,7 @@ footer { background: var(--dark-gray); padding: 60px 5% 20px 5%; text-align: cen
 }
 .whats-float:hover { transform: scale(1.1); }
 
-/* A onda do Ping */
+
 .whats-float::before {
   content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
   background-color: var(--green); border-radius: 50%; z-index: -1;
@@ -270,28 +266,26 @@ footer { background: var(--dark-gray); padding: 60px 5% 20px 5%; text-align: cen
   0% { transform: scale(1); opacity: 0.8; }
   100% { transform: scale(1.6); opacity: 0; }
 }
-/* ========================================= */
-/* EFEITOS EXPERT (LANTERNA, TILT E LETREIRO)*/
-/* ========================================= */
 
-/* 1. CURSOR LANTERNA (Luz neon seguindo o mouse) */
+
+
 .cursor-glow {
   position: fixed;
   top: 0; left: 0;
   width: 500px; height: 500px;
-  /* Cria uma bola de luz verde esfumaçada */
+
   background: radial-gradient(circle, rgba(0, 255, 136, 0.08) 0%, rgba(0, 0, 0, 0) 70%);
   border-radius: 50%;
-  transform: translate(-50%, -50%); /* Centraliza a luz na ponta do mouse */
-  pointer-events: none; /* Garante que a luz não bloqueie os cliques nos botões */
+  transform: translate(-50%, -50%);
+  pointer-events: none; 
   z-index: 999;
-  mix-blend-mode: screen; /* Faz a luz se misturar de forma bonita com o fundo preto */
+  mix-blend-mode: screen; 
 }
 
-/* 2. LETREIRO ROLANTE INFINITO */
+
 .marquee-container {
   width: 100%;
-  background: var(--green); /* Faixa verde neon */
+  background: var(--green); 
   color: #000;
   padding: 15px 0;
   overflow: hidden;
@@ -300,11 +294,9 @@ footer { background: var(--dark-gray); padding: 60px 5% 20px 5%; text-align: cen
   z-index: 10;
   box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
 }
-/* ========================================= */
-/* POLIMENTO FINAL: SCROLLBAR E FADE DE TELA */
-/* ========================================= */
 
-/* 1. Animação suave ao trocar de página (Fade-in) */
+
+
 body {
   animation: fadeInPage 0.6s ease-out;
 }
@@ -314,28 +306,28 @@ body {
   to { opacity: 1; }
 }
 
-/* 2. Barra de Rolagem Personalizada (Dark e Verde Neon) */
+
 ::-webkit-scrollbar {
-  width: 12px; /* Largura da barra */
+  width: 12px; 
 }
 
 ::-webkit-scrollbar-track {
-  background: #050505; /* Fundo super escuro igual o site */
+  background: #050505; 
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #222; /* Cor neutra inicial */
+  background: #222; 
   border-radius: 10px;
-  border: 2px solid #050505; /* Espaçamento interno */
+  border: 2px solid #050505;
   transition: 0.3s;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--green); /* Fica verde neon quando o cliente puxa a barra! */
+  background: var(--green); 
 }
 .marquee-content {
   display: inline-block;
-  /* Animação que empurra o texto para o lado sem parar */
+  
   animation: scrollMarquee 25s linear infinite; 
   font-weight: 900;
   font-size: 18px;
@@ -343,7 +335,7 @@ body {
 }
 
 .marquee-content span {
-  margin-right: 40px; /* Espaço entre as frases */
+  margin-right: 40px; 
 }
 
 @keyframes scrollMarquee {
@@ -351,19 +343,19 @@ body {
   100% { transform: translateX(-50%); } 
 }
 
-/* Ajuste vital para o Efeito 3D (Tilt) funcionar na galeria */
+
 .floating-gallery {
-  perspective: 1000px; /* Cria a profundidade 3D na tela */
+  perspective: 1000px;
 }
-/* RESPONSIVO MOBILE COMPLETÃO */
+
 @media (max-width: 768px) {
-  /* Hambúrguer e Menu Mobile */
+  
   .hamburger { display: flex; }
   nav { position: fixed; top: 0; right: -100%; width: 250px; height: 100vh; background: #080808; flex-direction: column; justify-content: center; align-items: center; transition: 0.4s ease-in-out; border-left: 2px solid var(--green); }
   nav.active { right: 0; }
   nav a { margin: 25px 0; font-size: 18px; }
   
-  /* Animação do X do Hambúrguer */
+
   .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(8px, 6px); }
   .hamburger.active span:nth-child(2) { opacity: 0; }
   .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -5px); }
@@ -377,62 +369,54 @@ body {
   .endereco { font-size: 14px; padding: 15px; }
   .faq-question { font-size: 16px; padding: 20px; }
 }
-/* --- ENXERTOS NOVOS: FIDE E LAYOUT DE FOTOS --- */
-
-/* ========================================= */
-/* SELO DA FIDE (Apenas o ícone menor)       */
-/* ========================================= */
 
 .fide-badge { 
-  margin-top: 30px; /* Distância do botão */
+  margin-top: 30px; 
   display: inline-flex; 
   justify-content: center;
 }
 
-/* O fundo do texto antigo sumiu, sobrou só a imagem! */
+
 .fide-badge img { 
   display: block; 
-  height: 28px; /* Menorzinho como ele pediu */
+  height: 28px; 
   width: 28px; 
   object-fit: contain; 
-  background-color: #ffffff; /* O fundo branco pra logo aparecer */
+  background-color: #ffffff; 
   padding: 3px; 
   border-radius: 50%; 
-  opacity: 0.7; /* Deixa a logo levemente transparente pra não roubar a cena */
+  opacity: 0.7; 
   transition: 0.3s ease;
 }
 
 .fide-badge img:hover {
-  opacity: 1; /* Fica 100% visível quando passa o mouse */
+  opacity: 1; 
   transform: scale(1.1);
 }
-/* Grid Novo do Mestre (1 foto grande, 2 pequenas embaixo) */
+
 .sobre-img-grid { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
 .sobre-img-grid img { width: 100%; object-fit: cover; border-radius: 15px; filter: grayscale(100%); transition: 0.5s; border: 1px solid rgba(255,255,255,0.1); }
 .sobre-img-grid img:hover { filter: grayscale(0%); box-shadow: 0 10px 30px rgba(0, 255, 136, 0.2); border-color: var(--green); }
 .sobre-img-grid .main-img { grid-column: span 2; height: 350px; }
 .sobre-img-grid .sub-img { height: 200px; }
 
-/* Ajuste brutal para caber as 16 fotos sem quebrar o site */
+
 .floating-gallery { display: grid !important; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
 .floating-gallery img { width: 100% !important; height: 280px !important; margin: 0 !important; transform: none !important; }
 
-/* Ajuste para o celular não bugar as fotos novas */
+
 @media (max-width: 768px) {
   .sobre-img-grid { grid-template-columns: 1fr; }
   .sobre-img-grid .main-img { grid-column: span 1; height: 250px; }
 }
 .hero-logo-main {
-  width: 180px; /* Tamanho ideal para destaque */
-  margin-bottom: 25px; /* Espaço entre a logo e o texto */
-  filter: drop-shadow(0px 10px 20px rgba(0, 255, 136, 0.3)); /* Um brilho verde de leve nela */
+  width: 180px; 
+  margin-bottom: 25px; 
+  filter: drop-shadow(0px 10px 20px rgba(0, 255, 136, 0.3)); 
 }
-/* ========================================= */
-/* AJUSTE DE ENQUADRAMENTO (Subindo ao máximo) */
-/* ========================================= */
 
 .floating-gallery img:nth-child(4),
 .floating-gallery img:nth-child(13) {
-  /* 100% é o limite máximo para subir a imagem */
+
   object-position: center 300% !important; 
 }
